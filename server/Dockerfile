@@ -1,10 +1,10 @@
-# Add maintainer, Neo4J
+# # Add maintainer, Neo4J
 
 # FROM python:3.6
 
-# COPY . /app
+# COPY . /usrs/src/app
 
-# WORKDIR /app
+# # WORKDIR /app
 
 # RUN pip install -r requirements.txt
 
