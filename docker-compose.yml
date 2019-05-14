@@ -1,6 +1,10 @@
 version: '3'
 
 services:
+  neo4j:
+    image: neo4j:3.4.5
+    ports:
+      - "17474:7474"
   server:
     build: ./server
     expose:
@@ -24,4 +28,6 @@ services:
       - ./client/public:/usr/src/app/public
     links:
       - "server:server"
+    depends_on:
+      - server
 
