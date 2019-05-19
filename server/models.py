@@ -8,6 +8,13 @@ from py2neo.ogm import GraphObject, Property, RelatedTo
 graph = Graph(
     host="localhost",
     port=7687,
-    user="neo4j"
+    user="neo4j",
     password="letmein",
 )
+
+
+class Project(GraphObject):
+    __primarykey__ = "title"
+    title = Property()
+
+

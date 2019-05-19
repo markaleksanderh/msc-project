@@ -1,10 +1,7 @@
-Flask==0.10.1
+Flask==1.0.2
+Flask-GraphQL==2.0.0
+graphene==2.1.3
+graphql-core==2.1
 py2neo==3.0
-graphql-core>=2.1rc1
 
-# graph = Graph(
-#     host=settings.NEO4J_HOST,
-#     port=settings.NEO4J_PORT,
-#     user=settings.NEO4J_USER,
-#     password=settings.NEO4J_PASSWORD,
-# )
+
