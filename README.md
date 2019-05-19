@@ -1,5 +1,11 @@
 ### MSc Project
 
+Run
+`docker-compose up`
+
+
+
+
 
 Check for running containers
 `docker ps`
