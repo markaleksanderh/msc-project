@@ -4,7 +4,8 @@ Run
 `docker-compose up`
 
 
-
+Check if package installed
+`docker exec <CONTAINER ID> pip list`
 
 
 Check for running containers

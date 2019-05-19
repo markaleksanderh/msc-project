@@ -2,9 +2,7 @@ from graphql import GraphQLError
 from py2neo import Graph
 from py2neo.ogm import GraphObject, Property, RelatedTo
 
-
 # Set up config file
-
 graph = Graph(
     host="localhost",
     port=7687,
@@ -14,7 +12,7 @@ graph = Graph(
 
 
 class Project(GraphObject):
-    __primarykey__ = "title"
-    title = Property()
+    __primarykey__ = "name"
+    name = Property()
 
 
