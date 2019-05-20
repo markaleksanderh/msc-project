@@ -14,5 +14,7 @@ graph = Graph(
 class Project(GraphObject):
     __primarykey__ = "name"
     name = Property()
+    def save(self):
+        graph.push(self)
 
 

@@ -7,6 +7,8 @@ Run
 Check if package installed
 `docker exec <CONTAINER ID> pip list`
 
+Use `docker exec` with server container id and run `pip install` with `graphene`, `py2neo` and `flask-graphql`.
+
 
 Check for running containers
 `docker ps`
