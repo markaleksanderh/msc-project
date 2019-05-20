@@ -28,6 +28,17 @@ query {
 }
 ```
 
+Mutation:
+```
+mutation {
+  create_project(name: "test") {
+    project {
+      name: name
+    }
+  }
+}
+```
+
 
 ---
 
