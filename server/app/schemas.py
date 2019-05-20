@@ -30,4 +30,4 @@ class Mutations(graphene.ObjectType):
     create_project = CreateProject.Field()
 
 
-schema = graphene.Schema(query=Query, auto_camelcase=False)
+schema = graphene.Schema(query=Query, mutation=Mutations, auto_camelcase=False)

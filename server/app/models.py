@@ -12,8 +12,21 @@ graph = Graph(
 
 
 class Project(GraphObject):
+
+
     __primarykey__ = "name"
     name = Property()
+
+    def __init__(self, **kwargs):
+        for key, value in kwargs.items():
+            if hasattr(self, key):
+                setattr(self, key, value)
+    
+    @property
+    def all(self):
+        return self.select(graph)
+
+
     def save(self):
         graph.push(self)
 
