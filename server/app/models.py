@@ -11,9 +11,30 @@ graph = Graph(
     password="letmein",
 )
 
-class Project(GraphObject):
-    __primarykey__ = "name"
+class BaseModel(GraphObject):
+    def __init__(self, **kwargs):
+        for key, value, in kwargs.items():
+            if hasattr(self, key):
+                setattr(self, key, value)
+
+    @property
+    def all(self):
+        return self.select(graph)
+    
+    def save(self):
+        graph.push(self)
+
+class Project(BaseModel):
+    __primarykey__ = 'name'
     name = Property()
+
+    def fetch(self):
+        return self.select(graph, self.name).first()
+
+
+# class Project(GraphObject):
+#     __primarykey__ = "name"
+#     name = Property()
 
     # def __init__(self, **kwargs):
     #     for key, value in kwargs.items():
