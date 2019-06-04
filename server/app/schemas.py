@@ -2,11 +2,7 @@ import graphene
 
 from .models import Project
 
-
-
-
-
-# # Project schema 
+# Project schema 
 class ProjectSchema(graphene.ObjectType):
     name = graphene.String()
 
@@ -23,11 +19,11 @@ class CreateProject(graphene.Mutation):
         project.save()
         return CreateProject(project=project, success=True)
 
-# # Query
+# Query
 class Query(graphene.ObjectType):
     projects = graphene.List(lambda: ProjectSchema)
 
-# # Mutations
+# Mutations
 class Mutations(graphene.ObjectType):
     create_project = CreateProject.Field()
 

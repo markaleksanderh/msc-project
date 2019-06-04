@@ -8,7 +8,7 @@ graph = Graph(
     host="localhost",
     port=7687,
     user="neo4j",
-    password="letmein",
+    password="admin",
 )
 
 class BaseModel(GraphObject):
