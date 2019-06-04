@@ -1,6 +1,7 @@
 from graphql import GraphQLError
-from py2neo import Graph
+from py2neo import Graph, Node
 from py2neo.ogm import GraphObject, Property, RelatedTo
+
 
 # Set up config file
 graph = Graph(
@@ -10,24 +11,20 @@ graph = Graph(
     password="letmein",
 )
 
-
 class Project(GraphObject):
-
-
     __primarykey__ = "name"
     name = Property()
 
-    def __init__(self, **kwargs):
-        for key, value in kwargs.items():
-            if hasattr(self, key):
-                setattr(self, key, value)
+    # def __init__(self, **kwargs):
+    #     for key, value in kwargs.items():
+    #         if hasattr(self, key):
+    #             setattr(self, key, value)
     
-    @property
-    def all(self):
-        return self.select(graph)
+    # @property
+    # def all(self):
+    #     return self.select(graph)
 
 
-    def save(self):
-        graph.push(self)
-
+    # def save(self):
+    #     graph.push(self)
 
