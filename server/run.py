@@ -1,5 +1,5 @@
 from app import create_app
-from app import settings
+# from app import settings
 
 app = create_app()
 
