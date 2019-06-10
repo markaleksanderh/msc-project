@@ -54,6 +54,8 @@ Remove all
 Build 
 `docker build -t msc-project:latest . `
 
+Rebuild
+`docker-compose build` or `docker-compose up --build`
 
 Run
 `docker run -d -p 5000:5000 msc-project:latest`
