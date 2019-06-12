@@ -10,15 +10,6 @@ graph = Graph(
     bolt_port=7687,
 )
 
-# graph = Graph("http://localhost:7474/db/data/")
-
-
-test_person = Node("Person", name="Test Person")
-graph.create(test_person)
-
-
-# print(graph)
-
 class Project(GraphObject):
     def __init__(self, name):
         self.name = name
@@ -27,6 +18,8 @@ class Project(GraphObject):
 
     def save(self):
         graph.push(self)
+
+    
 
 # class BaseModel(GraphObject):
 #     def __init__(self, **kwargs):
