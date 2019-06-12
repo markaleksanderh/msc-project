@@ -2,15 +2,22 @@ from graphql import GraphQLError
 from py2neo import Graph, Node, Relationship
 from py2neo.ogm import GraphObject, Property, RelatedTo
 
+
 # Set up config file
-# graph = Graph(
-#     # bolt=True,
-#     host='localhost',
-#     port=7687,
-# )
+graph = Graph(
+    bolt=True,
+    host='172.18.0.2',
+    bolt_port=7687,
+)
 
-graph = Graph("bolt://localhost:7687")
+# graph = Graph("http://localhost:7474/db/data/")
 
+
+test_person = Node("Person", name="Test Person")
+graph.create(test_person)
+
+
+# print(graph)
 
 class Project(GraphObject):
     def __init__(self, name):
